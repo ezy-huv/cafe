@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Progress</title>
+  <style>
+    body {
+      background: #000;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .panel {
+      background: #b3b3b3;
+      width: 85vw;
+      max-width: 480px;
+      height: 85vw;
+      max-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+    .progress-circle {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 2px #111;
+    }
+    .progress-text {
+      font-size: 48px;
+      font-family: sans-serif;
+      color: #111;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      let percent = 0;
+      const text = document.querySelector('.progress-text');
+      const interval = setInterval(function() {
+        percent += 10;
+        if (percent > 100) percent = 100;
+        text.textContent = percent + '%';
+        if (percent === 100) clearInterval(interval);
+      }, 500);
+      setTimeout(function() {
+        window.location.href = 'index7.html';
+      }, 5000);
+    };
+  </script>
+</head>
+<body>
+  <div class="panel">
+    <div class="progress-circle">
+      <span class="progress-text">0%</span>
+    </div>
+  </div>
+</body>
+</html>

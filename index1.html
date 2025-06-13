@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Drink Selection</title>
+  <style>
+    body {
+      background: #000;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .panel {
+      background: #b3b3b3;
+      width: 85vw;
+      max-width: 480px;
+      height: 85vw;
+      max-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 40px 0 40px 0;
+    }
+    .steps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 24px;
+    }
+    .step {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #d6d6d6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .step.selected {
+      border: 4px solid #888;
+      background: #b3b3b3;
+    }
+    .steps .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -32px;
+      top: 50%;
+      width: 32px;
+      height: 4px;
+      background: #d6d6d6;
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+    .choices {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+    .choice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #d6d6d6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+    .circle.black {
+      border: 10px solid #2d2621;
+    }
+    .circle.latte {
+      border: 10px solid #b4977b;
+    }
+    .label {
+      font-size: 24px;
+      color: #222;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <div class="steps">
+      <div class="step selected"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+    </div>
+    <div class="choices">
+      <div class="choice">
+        <div class="circle black" onclick="location.href='index2.html'" style="cursor:pointer;"></div>
+        <div class="label">Black</div>
+      </div>
+      <div class="choice">
+        <div class="circle latte"></div>
+        <div class="label">Latte</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

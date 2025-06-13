@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Strength Selection</title>
+  <style>
+    body {
+      background: #000;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .panel {
+      background: #b3b3b3;
+      width: 85vw;
+      max-width: 480px;
+      height: 85vw;
+      max-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 40px 0 40px 0;
+    }
+    .steps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 24px;
+    }
+    .step {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      border: none;
+    }
+    .step.selected {
+      border: 4px solid #888;
+      background: #b3b3b3;
+    }
+    .steps .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      width: 40px;
+      height: 4px;
+      background: #ddd;
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+    .strength-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 32px;
+      margin-bottom: 0;
+      position: relative;
+    }
+    .strength-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #fff;
+      border: 6px solid #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .strength-row .line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: #111;
+      z-index: 0;
+      transform: translateY(-50%);
+    }
+    .beans-row {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .beans {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      position: relative;
+      top: 0;
+    }
+    .beans-3 {
+      margin-left: -12px;
+    }
+    .beans-2 {
+      margin-left: 8px;
+    }
+    .beans-1 {
+      margin-left: 28px;
+    }
+    .back-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      font-size: 32px;
+      color: #888;
+      border: none;
+      cursor: pointer;
+      box-shadow: none;
+    }
+    .back-btn:active {
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <div class="steps">
+      <div class="step"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+      <div class="step selected"></div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+      <div class="strength-row" style="position:relative;width:320px;max-width:80vw;margin:0 auto;">
+        <div class="line"></div>
+        <div class="strength-circle" style="z-index:2; cursor:pointer;" onclick="location.href='index5.html'"></div>
+        <div class="strength-circle" style="z-index:2;"></div>
+        <div class="strength-circle" style="z-index:2;"></div>
+      </div>
+      <div class="beans-row" style="width:320px;max-width:80vw;margin:0 auto;">
+        <div class="beans beans-3">
+          <svg width="16" height="20" viewBox="0 0 16 20"><ellipse cx="8" cy="10" rx="6" ry="9" fill="#7a6a58"/><path d="M8 1 Q7 10 8 19" stroke="#fff" stroke-width="2" fill="none"/></svg>
+          <svg width="16" height="20" viewBox="0 0 16 20"><ellipse cx="8" cy="10" rx="6" ry="9" fill="#7a6a58"/><path d="M8 1 Q7 10 8 19" stroke="#fff" stroke-width="2" fill="none"/></svg>
+          <svg width="16" height="20" viewBox="0 0 16 20"><ellipse cx="8" cy="10" rx="6" ry="9" fill="#7a6a58"/><path d="M8 1 Q7 10 8 19" stroke="#fff" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="beans beans-2">
+          <svg width="16" height="20" viewBox="0 0 16 20"><ellipse cx="8" cy="10" rx="6" ry="9" fill="#7a6a58"/><path d="M8 1 Q7 10 8 19" stroke="#fff" stroke-width="2" fill="none"/></svg>
+          <svg width="16" height="20" viewBox="0 0 16 20"><ellipse cx="8" cy="10" rx="6" ry="9" fill="#7a6a58"/><path d="M8 1 Q7 10 8 19" stroke="#fff" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="beans beans-1">
+          <svg width="16" height="20" viewBox="0 0 16 20"><ellipse cx="8" cy="10" rx="6" ry="9" fill="#7a6a58"/><path d="M8 1 Q7 10 8 19" stroke="#fff" stroke-width="2" fill="none"/></svg>
+        </div>
+      </div>
+    </div>
+    <button class="back-btn">&#8592;</button>
+  </div>
+</body>
+</html>
